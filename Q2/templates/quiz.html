@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Quiz{% endblock %}
+{% block content %}
+<h1>Animal Quiz</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="guess1">Which bear lives at the North Pole?</label>
+        <img src="{{ url_for('static', filename='images/polar_bear.jpg') }}" class="img-fluid mb-3" alt="Polar Bear">
+        <input type="text" class="form-control" id="guess1" name="guess1">
+    </div>
+    <div class="form-group">
+        <label for="guess2">Which is the fastest land animal?</label>
+        <img src="{{ url_for('static', filename='images/cheetah.jpg') }}" class="img-fluid mb-3" alt="Cheetah">
+        <input type="text" class="form-control" id="guess2" name="guess2">
+    </div>
+    <div class="form-group">
+        <label for="guess3">Which is the largest animal?</label>
+        <img src="{{ url_for('static', filename='images/blue_whale.jpg') }}" class="img-fluid mb-3" alt="Blue Whale">
+        <input type="text" class="form-control" id="guess3" name="guess3">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% if score is not none %}
+    <h2 class="mt-4">Your Score is {{ score }}</h2>
+{% endif %}
+{% endblock %}
